@@ -223,3 +223,4 @@ def evidence_dist(idxObservation):
                     idxObservation, idxObject, idxPose)
                 accumulate.append(lastPosterior * likelihoodDistribution)
     return sum(accumulate)
+ 
