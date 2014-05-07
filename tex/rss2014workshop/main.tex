@@ -99,28 +99,17 @@
     %* introduce the idea
     %* contributions?
 
-    % I would try something more like this. let me know what you think... 
-    Many state-of-the-art object recognition systems have been developed using a variety of feature extraction techniques. As computer vision matures, it is important to leverage all useful feature extraction techniques together in a single for the best object recognition results. However, static object recognition will always have its limits. Sometimes an object may appear ambiguous with respect to another object, and sometimes distinctive features may hidden due to its pose.  In this paper we present an approach to help tackle both of these problems.
-
-    % % the BN
-    % We introduce a probabilistic graphical model for combining arbitrary feature extraction techniques into a single object recognition system with the requirement that for any feature type there must be a function given for computing the matching error between two features of the same type. 
-
-    % % Action prediction
-    % This model also learns to recognize object in various poses. With this information, we formulate an approach leveraging robotic manipulation to determine the optimal action for future expected object recognition.  
+    % introduce the problem
+    Many state-of-the-art object recognition systems have been developed using a variety of feature extraction techniques. Despite the fact that some of them have been very successful, we still cannot say that the problem of object recognition has been solved. We claim that the reason for that is already included in the problem formulation. Given static images there are cases where it is impossible to recognize the object as it may appear ambiguous with respect to another object(see~\figref{fig:pr2}). One of the reasons for that is that distinctive features may be hidden due to the pose of the object.  In this paper we present an approach to help tackle this problem.
     
-    % KAROL - I like the beginning. However after that I think you get too much into the details of how exactly it works. Introduction is supposed to be very broad. I wouldn't mention multiple feature types here.    
+    % introduce the idea
+    In this work we take advantage of robot's manipulation capabilities and apply them in the domain of object recognition. In our approach we tackle interactive object recognition problem where we look for the action that will minimize the expected entropy over objects distribution. Therefore we want to be optimal in the number of actions that will lead us to successful object recognition.
 
-    % CHET - OK. I commented it out. Write something. Or at least give me some bullet points to write on.
+	% contributions
+	The key contributions of our approach are that (a) to the best of our knowledge, we are first to introduce the idea of a robot interacting with the scene in order to improve object recognition, (b) our approach is probabilistic and takes into account a probabilistic object recognition model that is agnostic to the feature type, (c) we present an action selection model that reasons about the most informative action which leads to optimality in the number of actions to recognize the object.
+	
+	
     
-
-    % OLD INTRO
-        % % problem of static object recognition
-        % Although multiple successful state-of-the-art object recognition systems have been developed, we still cannot say that the problem of object recognition has been solved.
-        % We claim that the reason for that is already included in the problem formulation. Given static images there are cases where it is impossible to recognize the object simply because of lack of distinctive features (see~\figref{fig:pr2}). One way to overcome this problem has been presented in the area of object segmentation where robot-objects interaction was introduced. 
-
-        % % introduce the idea
-        % In this work we take advantage of robot's manipulation capabilities and apply them in the domain of object recognition. In our approach we tackle interactive object recognition problem where we look for the action that will minimize the expected entropy over objects distribution. Therefore we want to be optimal in the number of actions that will lead us to successful object recognition.
-
     \setlength{\tabcolsep}{0.1em}
     \begin{figure}[ht]
     \begin{tabular}{cccc}
@@ -170,6 +159,16 @@
     All these approaches do not take into consideration action choices. Actions are assumed to be known and performed either by a human or a robot. In this work we introduce a probabilistic method to choose the best action based on robot's observations. To the best of our knowledge, the problem of interactive object recognition has not been addressed before. 
 
 \section{Approach}
+	% general probabilistic model 
+		% object recognition
+		% action selection
+	
+	% implementation
+		% object recognition, features n stuff
+		% action selection, sampling n stuff
+
+
+
     Our model consists of an object recognition subgraph extended in time for modelling actions. 
     % Objects and poses are modelled discriminatively and each feature is modelled as continuous random variable of feature matching error. 
     This model is agnostic of the type of features used so long a matching error function is defined for comparing features of the same type. Actions are optimally selected based the minimum expected entropy of the object predictions for each potential action.
