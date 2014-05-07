@@ -77,12 +77,12 @@
     % for over three affiliations, or if they all won't fit within the width
     % of the page, use this alternative format:
     \author{\authorblockN{Karol Hausman,
-    Chet Corcos,
+    Chet Corcos, J\"{o}rg M\"{u}ller,
     Fei Sha and 
     Gaurav S. Sukhatme}\\
     \authorblockA{University of Southern California\\
     Department of Computer Science,\\
-    {\texttt{\{hausman, corcos, feisha, gaurav\}@usc.edu}}}}
+    {\texttt{\{hausman, corcos, joerg.mueller, feisha, gaurav\}@usc.edu}}}}
 
     \maketitle
 
@@ -420,9 +420,11 @@
         %*cross validation error,
 
     \subsection{Action Selection}
-        The experiment is constructed as follows. We expose an object to the Kinect sensor and obtain the recognition result. In the next step we employ the action selection algorithm to choose the best action and we execute it. In order to measure if the action improved the previous recognition we compute the posterior probability of the object. We execute actions until the algorithm converges which means that the action selection algorithm returns action called 'stay'.
+        The experiment is constructed as follows. We expose an object to the Kinect sensor and obtain the recognition result. In the next step we employ the action selection algorithm to choose the best action and we execute it. In order to measure if the action improved the previous recognition we compute the posterior probability of the object. TABLE REF presents the posterior probabilities of the object as well as the best action that was chosen by the algorithm. We execute actions until the algorithm converges which means that the action selection algorithm returns says that all the actions are equally informative.
 
-        We ran the above described experiment in various conditions, i.e. different books and different starting poses(ambiguous and non-ambiguous). The results are described in TABLE REF
+        We ran the above described experiment in various conditions, i.e. different books and different starting poses(ambiguous and non-ambiguous). The results are described in TABLE REF.
+        
+        DISCUSSION
 
 
         %*explain our setup
@@ -444,14 +446,14 @@
         % we check recognition after the action has been taken (in the table)
 
 
-        \begin{itemize}
-        \item explain our dataset
-        \item show pictures of objects
-        \item show cross validation results for our training
-        \item explain the setup
-        \item show real data results for object recognition (table)
-        \item discuss the results, emphasize that the action selection works
-        \end{itemize}
+%        \begin{itemize}
+%        \item explain our dataset
+%        \item show pictures of objects
+%        \item show cross validation results for our training
+%        \item explain the setup
+%        \item show real data results for object recognition (table)
+%        \item discuss the results, emphasize that the action selection works
+%        \end{itemize}
 
         \section{Conclusions}
         \begin{itemize}
